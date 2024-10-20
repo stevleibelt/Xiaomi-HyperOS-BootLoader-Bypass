@@ -233,7 +233,7 @@ function decryptData(string $data): string|false
 function outputErrormessageAndExit(string $message)
 {
   printf("Error:: %s.", $message);
-  exit(10)
+  exit(10);
 }
 
 /***********************
@@ -336,8 +336,8 @@ logf("Refactoring parameters...");
 $data = json_decode(decryptData($args), true);
 
 if (!array_key_exists("rom_version", $data)) {
-  $dataAsJSON = json_encode($data)
-  outputErrormessageAndExit("Invalid data, key 'rom_version' not found: " . $dataAsJSON)
+  $dataAsJSON = json_encode($data);
+  outputErrormessageAndExit("Invalid data, key 'rom_version' not found: " . $dataAsJSON);
 }
 
 // V816 is the special identity for HyperOS in MIUI version
