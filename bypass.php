@@ -335,6 +335,10 @@ logf("Refactoring parameters...");
 
 $data = json_decode(decryptData($args), true);
 
+if (!is_array($data)) {
+  $argsAsJSON = json_encode($args);
+  outputErrormessageAndExit("Data is not an array. Unencryptes args as json are:" . $argsAsJSON);
+}
 if (!array_key_exists("rom_version", $data)) {
   $dataAsJSON = json_encode($data);
   outputErrormessageAndExit("Invalid data, key 'rom_version' not found: " . $dataAsJSON);
